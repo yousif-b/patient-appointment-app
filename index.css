@@ -1,0 +1,230 @@
+*{
+    font-family: 'Lato', sans-serif;
+    font-weight:400;
+}
+body{
+    background-color:#dfdeff;
+    margin: 0;
+    font-size: 1.1rem;
+}
+
+#wrapper{
+    width:100%;
+}
+
+#navItems{
+    color:white;
+    display: flex;
+    flex-direction: row;
+    list-style-type: none;
+}
+
+#navItems a{
+    padding: 1.5rem 1rem 1.5rem 1rem;
+    text-decoration: none;
+    color:white;
+}
+
+#navItems a:hover{
+    background-color: #514ecc;
+}
+
+nav{
+    display:flex;
+    justify-content:space-around;
+    gap:30%;
+    background-color: #605bff;
+    overflow: hidden;
+
+}
+
+nav form{
+    display: flex;
+    margin: 1.5rem 0 1.5rem 0;
+}
+
+nav form button{
+    padding:.5rem 1rem .5rem 1rem;
+    border-radius: 1rem;
+    border-style:none;
+    background-color: white;
+    color:#605bff;
+    margin-left:.5rem;
+}
+
+nav form input{
+    border-radius: 1rem;
+    padding:.5rem;
+    border-style:none;
+}
+
+#searchPatients{
+    margin-top: 1rem;
+}
+
+#hamburgerMenuBtn{
+    display:none;
+    margin: 1.5rem 0 1.5rem 5rem;
+    padding: 0 .5em 0 .5em;
+    border-radius:.5rem;
+}
+
+#hamburgerMenuBtn div {
+    width: 2em;
+    height: .4em;
+    border-radius:1em;
+    background-color: white;
+    margin: 6px 0;
+  }
+
+#appointmentStats{
+    display:flex;
+    justify-content: center;
+    flex-grow:4;
+    gap: 2rem;
+    margin: 2rem 10% 0 10%;
+}
+
+#appointmentStats h3{
+    color:#605bff;
+}
+
+.navigateStats{
+    display:none;
+}
+
+.stats{
+    background-color: white;
+    border-radius: .5rem;
+    width:15rem;
+    min-width: 10rem;
+    flex-grow:1;
+    padding:0 0 0 1rem;
+    color:#b6b6b6;
+}
+
+#welcome{
+    color:#b6b6b6;
+    width:30rem;
+    flex-grow:2;
+    border-radius: .5rem;
+    background-color: white;
+    padding: 0 1rem 0 1rem;
+    height: auto;
+}
+
+#upcomingAppointments{
+    background-color: white;
+    padding:1rem;
+    margin: 2rem 1rem 0 0;
+    border-radius: .5rem;
+    flex-grow:3;
+}
+
+#dashboardBottomRow{
+    display:flex;
+    flex-grow:4;
+    justify-content: center;
+    margin: 0 10% 0 10%;
+}
+
+#upcomingAppointments ul{
+    display:flex;
+    flex-direction: row;
+    list-style-type: none;
+    padding: 0;
+}
+
+#reminderBox{
+    flex-grow:1;
+    margin-left:1rem;
+    border-radius: .5rem;
+}
+
+.upcomingAppointment{
+    display:flex;
+    justify-content: space-between;
+    gap: 3rem;
+}
+
+aside{
+    background-color: white;
+    padding:1rem;
+    margin: 2rem 0 0 0;
+}
+
+aside ul{
+    list-style-type: none;
+    padding: 0;
+}
+
+@media only screen and (max-width: 600px) {
+    body{
+        font-size: initial;
+    }
+    nav{
+        text-align:center;
+        gap:0;
+    }
+
+    nav ul{
+        justify-content: center;
+    }
+
+    #navItems{
+        display:none;
+    }
+
+    #hamburgerMenuBtn{
+        display:block;
+    }
+
+    .navigateStats{
+        display: inline-block;
+        background-color: #605bff;
+        color:white;
+        border-style:none;
+        padding:.5rem 3rem .5rem 3rem;
+        border-radius:0 0 .5rem .5rem;
+        width:49.5%;
+    }
+
+    .stats{
+        border-radius: .5rem .5rem 0 0;
+        width:100%;
+        margin-top:.25rem;
+        display:none;
+        height: 15rem;
+        flex-grow:unset;
+    }
+
+    #welcome{
+        width:100%;
+        margin-top:.25rem;
+        display:none;
+        flex-grow:unset;
+        height:15rem;
+    }
+
+    #dashboardBottomRow{
+        flex-direction: column-reverse;
+        margin:0;
+    }
+
+    #upcomingAppointments{
+        margin: 1rem 0 5rem;
+    }
+
+    #appointmentStats{
+        flex-wrap: wrap;
+        justify-content:space-between;
+        gap:0;
+        width:100%;
+        margin:1rem 0 0 0;
+        flex-grow:unset;
+    }
+
+    #reminderBox{
+        margin:1rem 0 0 0;
+    }
+  }
