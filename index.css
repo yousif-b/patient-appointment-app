@@ -176,12 +176,14 @@ nav form input{
     border: 1px solid #404040;
     border-radius:.5rem;
     padding:.5rem;
+    width:80%;
     margin-right:.5rem;
 }
 
 #reminderBox form button{
     background-color: #605bff;
     color:white;
+    width:10%;
     border-style:none;
     padding:.5rem;
     border-radius:.5rem;
