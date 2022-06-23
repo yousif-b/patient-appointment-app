@@ -1,4 +1,5 @@
-export default function handlePatients(patients){
-    renderPatients(patients);
-    renderAppointments(patients);
-}
+import renderPatients from "./renderPatients.js";
+
+let patients = JSON.parse(sessionStorage.getItem("patients"));
+renderPatients(patients);
+//renderAppointments(patients);
