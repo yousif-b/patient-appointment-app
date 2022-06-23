@@ -111,6 +111,11 @@ nav form input{
     flex-wrap: wrap;
 }
 
+.patientInformation{
+    display:flex;
+    flex-wrap: wrap;
+}
+
 
 #patientBox h1{
     width:100%;
@@ -132,6 +137,15 @@ nav form input{
 
 .navigateStats{
     display:none;
+}
+
+.medication{
+    width:50%;
+    margin:0;
+}
+
+.appointments{
+    width:50%;
 }
 
 .stats{
@@ -216,14 +230,14 @@ nav form input{
     border: 1px solid #404040;
     border-radius:.5rem;
     padding:.5rem;
-    width:80%;
+    width:70%;
     margin-right:.5rem;
 }
 
 #reminderBox form button{
     background-color: #605bff;
     color:white;
-    width:10%;
+    width:15%;
     border-style:none;
     padding:.5rem;
     border-radius:.5rem;
