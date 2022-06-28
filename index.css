@@ -148,6 +148,77 @@ nav form input{
     width:50%;
 }
 
+#addPatientBox{
+    padding:1rem;
+}
+
+#addPatientBox form{
+    background-color:white;
+    margin: 2rem 20% 0 20%;
+    border-radius:.5rem;
+    padding:2rem 2rem 3rem 2rem;
+    display:flex;
+    flex-direction:column;
+    justify-content: center;
+}
+
+#addPatientBox input[type = 'submit']{
+    width:fit-content;
+    padding:1rem 4rem 1rem 4rem;
+    margin: 0 auto;
+    background-color: #605bff;
+    border-style:none;
+    border-radius:1.5rem;
+    color:white;
+    font-size:larger;
+}
+
+#patientReg{
+    background-color: white;
+    border-radius:.5rem;
+    padding: 2.5rem 0 2.5rem 0;
+    display:flex;
+    justify-content: space-evenly;
+}
+
+#patientReg input, select{
+    border-radius:1rem;
+    border-style:solid;
+    border-color: #b6b6b6;
+    padding:.5rem;
+    width: 12.5rem;
+    transform: scale(1.25);
+}
+
+#patientReg select{
+    width:14rem;
+}
+
+#patientReg input[type = 'radio']{
+    width:unset;
+}
+
+.patientRegSection {
+    display:flex;
+    flex-direction:column;
+    gap:1rem;
+}
+
+#maleFemaleRadioBtns{
+    display:flex;
+    justify-content: space-evenly;
+    padding:.5rem;
+}
+
+.maleFemaleRadio{
+    display:flex;
+    flex-direction:row;
+}
+
+.maleFemaleRadio Label{
+    margin-top: -.2rem;
+}
+
 .stats{
     background-color: white;
     border-radius: .5rem;
@@ -266,7 +337,7 @@ aside ul{
     padding: 0;
 }
 
-@media only screen and (max-width: 600px) {
+@media only screen and (max-width: 1000px) {
     body{
         font-size: initial;
     }
@@ -321,6 +392,7 @@ aside ul{
 
     #upcomingAppointments{
         margin: 1rem 0 0 0;
+        padding:0;
     }
 
     #appointmentStats{
@@ -348,5 +420,25 @@ aside ul{
     #patientBox {
         width: 100%;
         margin: 3rem 0 0 0;
+    }
+
+    #addPatientBox form{
+        width:100%;
+        gap:1rem;
+        margin: 1rem 0 0 0;
+        padding:1rem 0 1rem 0;
+    }
+
+    #patientReg{
+        width:100%;
+        gap: 1rem;
+        margin:1rem 0 0 0;
+        padding:1rem 0 1rem 0;
+        border-radius: unset;
+    }
+
+    #patientReg input, select{
+        transform: unset;
+        width:unset;
     }
   }

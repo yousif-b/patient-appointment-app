@@ -25,7 +25,54 @@
                    </div>
                 </nav>
             </header>
-
+            <secion id = 'addPatientBox'>
+                <form>
+                    <h2>Register Patient</h2>
+                    <div id = "patientReg">
+                        <div class = "patientRegSection">
+                            <input type = "text" id = "firstNameIn" placeholder = "first name">
+                            <input type = "date" id = "DOBIn" placeholder = "DOB">
+                            <input type = "number" id = "weightIn" placeholder = "weight">
+                            <input type = "number" id = "heightIn" placeholder = "height">
+                        </div>
+                        <div class = "patientRegSection">
+                            <input type = "text" id = "lastNameIn" placeholder = "last name">
+                            <div id = "maleFemaleRadioBtns">
+                                <div class = "maleFemaleRadio">
+                                    <input type = "radio" id = "male" name = "maleFemaleBtn" value = "male">
+                                    <label for = "male">male</label>
+                                </div>  
+                                <div class = "maleFemaleRadio">
+                                    <input type = "radio" id = "female" name = "maleFemaleBtn" value = "female">
+                                    <label for = "female">female</label>
+                                </div>
+                            </div>
+                            <input type = "text" id = "addressIn" placeholder = "address">
+                            <input type = "tel" id = "numberIn" placeholder = "number">
+                        </div>
+                        <div class = "patientRegSection">
+                            <input type = "text" id = "emailIn" placeholder = "email">
+                            <select name = "smoking">
+                                <option value = "">Smoking?</option>
+                                <option value = "yes">yes</option>
+                                <option value = "no">no</option>
+                            </select>
+                            <select name = "HeartE">
+                                <option value = "">Heart Events?</option>
+                                <option value = "yes">yes</option>
+                                <option value = "no">no</option>
+                            </select>
+                            <select name = "riskL">
+                                <option value = "">Health Risk?</option>
+                                <option value = "low">low</option>
+                                <option value = "medium">medium</option>
+                                <option value = "high">high</option>
+                            </select>
+                        </div>
+                    </div>
+                    <input type = "submit">
+                </form>
+            </secion>
             <section id = "patientListBox">
                 <h2>Patient List</h2>
                 <table id = "patientList">
