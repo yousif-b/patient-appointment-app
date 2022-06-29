@@ -4,11 +4,11 @@ let patientName = urlParams.get('p');
 let patients = JSON.parse(sessionStorage.getItem("patients"));
 
 function getMedication(medication){
-    let medicationHTML = ``;
+    let medicationHTML = `<div id = 'medicationList'>`;
     medication.forEach(m => {
         medicationHTML+= `<h3> ${m} </h3>`;
     })
-    return medicationHTML;
+    return medicationHTML + '</div>';
 }
 
 function getAppointments(appointments){
@@ -36,18 +36,23 @@ patients.forEach(p =>{
                 <h2> Sex: ${p.sex} </h2>
                 <h2> Number: ${p.number} </h2>
             </div>
-            <div class = 'medication'>
-            <h2>Medication: </h2>
-            ${getMedication(p.medications)}
+            <div id = "medicationAppointment"{
+                <div class = 'medication'>
+                    <h2>Medication: </h2>
+                    ${getMedication(p.medications)}
+                </div>
+                <div class = 'appointments'> 
+                    <h2>Appointments: </h2>
+                    <table>
+                        ${getAppointments(p.appointments)}
+                    </table>
+                </div>
             </div>
-            <div class = 'appointments'> 
-            <h2>Appointments: </h2>
-            <table>
-                ${getAppointments(p.appointments)}
-            </table>
+            <div id = "patientButtons">
+                <button id = "editPatientBtn"> Edit </button>
+                <button id = "appointmentPatientBtn"> Set Appointment </button>
+                <button id = "deletePatientBtn"> Delete Patient </button>
             </div>
-            <button> Edit </button>
-            <button> Set Appointment </button>
         `
     }
 })

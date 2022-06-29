@@ -103,22 +103,33 @@ nav form input{
 }
 
 #patientBox{
-    background-color: white;
+    background-color:white;
+    color:#404040;
     border-radius:.5rem;
     margin: 3rem 20% 0 20%;
-    padding:1rem;
     display:flex;
+    justify-content: center;
     flex-wrap: wrap;
+}
+
+#patientBox h1{
+    color:#605bff;
 }
 
 .patientInformation{
+    background-color: white;
+    color:#404040;
+    padding:1rem;
+    margin:0;
+    border-radius:0.5rem;
+    width:90%;
     display:flex;
     flex-wrap: wrap;
 }
 
-
 #patientBox h1{
-    width:100%;
+    width:90%;
+    padding:1rem;
 }
 
 #patientBox h2{
@@ -127,7 +138,7 @@ nav form input{
 
 
 .patientRow:hover{
-    background-color: #8d8aff;
+    background-color: #605bff;
     color:white;
 }
 
@@ -140,12 +151,67 @@ nav form input{
 }
 
 .medication{
-    width:50%;
+    width:43.5%;
     margin:0;
+    padding:1rem;
+}
+
+#medicationList{
+    background-color: white;
+    color:#404040;
+    padding: 0.1rem .5rem .5rem .5rem;
+    border-radius:.5rem;
+}
+
+#medicationAppointments{
+    display: flex;
+    justify-content: center;
 }
 
 .appointments{
-    width:50%;
+    padding:1rem;
+    width:43.5%;
+    margin:0;
+}
+
+.appointments table{
+    background-color: white;
+    color:#404040;
+    margin:0 auto;
+    padding:1rem;
+    border-radius: .5rem;
+    width: 100%;
+}
+
+#patientButtons{
+    display:flex;
+    justify-content: center;
+    border-radius: 0 0 .5rem .5rem;
+    gap:2rem;
+    padding:3rem 1rem 3rem 1rem;
+    width:100%;
+}
+
+#patientButtons button{
+    padding:1rem;
+    font-size:larger;
+    border-radius:2rem;
+    border-style:none;
+}
+
+#editPatientBtn{
+    background-color:#ffcb08;
+    color:white;
+}
+
+#appointmentPatientBtn{
+    background-color: #605bff;
+    color: white;
+}
+
+#deletePatientBtn{
+    background-color: #fc3517;
+    color:white;
 }
 
 #addPatientBox{
@@ -265,6 +331,7 @@ nav form input{
     border-radius: .5rem;
     border-spacing: 0;
     border: 1px solid #b6b6b6;
+    text-align:center;
     overflow: hidden;
 }
 
@@ -279,6 +346,10 @@ nav form input{
 .dataField{
     background-color: #605bff;
     color:white;
+}
+
+.dataField td:hover{
+    background-color:#514ecc;
 }
 
 #reminderBox{
@@ -440,5 +511,29 @@ aside ul{
     #patientReg input, select{
         transform: unset;
         width:unset;
+    }
+
+    #patientButtons button{
+        font-size:unset;
+    }
+
+    .medication{
+        width:100%;
+        padding: 0;
+    }
+
+    #medicationList{
+        border-radius:unset;
+    }
+
+    .appointments{
+        width:100%;
+        padding: 0;
+    }
+
+    .appointments table{
+        margin: 0;
+        width:100%;
+        border-radius: unset;
     }
   }
