@@ -25,64 +25,65 @@
                    </div>
                 </nav>
             </header>
-            <secion id = 'addPatientBox'>
-                <form>
-                    <h2>Register Patient</h2>
-                    <div id = "patientReg">
-                        <div class = "patientRegSection">
-                            <input type = "text" id = "firstNameIn" placeholder = "first name">
-                            <input type = "date" id = "DOBIn" placeholder = "DOB">
-                            <input type = "number" id = "weightIn" placeholder = "weight">
-                            <input type = "number" id = "heightIn" placeholder = "height">
+            <section class = 'patientListBox'>
+                <h3>Register Patient</h3>
+                <form id = 'regForm'>
+                    <div class = 'inputSection'>
+                        <div class = 'inputBox'>
+                            <label for = 'firstNameIn'>First Name</label>
+                            <input type = 'text' id = 'firstNameIn'>
                         </div>
-                        <div class = "patientRegSection">
-                            <input type = "text" id = "lastNameIn" placeholder = "last name">
-                            <div id = "maleFemaleRadioBtns">
-                                <div class = "maleFemaleRadio">
-                                    <input type = "radio" id = "male" name = "maleFemaleBtn" value = "male">
-                                    <label for = "male">male</label>
-                                </div>  
-                                <div class = "maleFemaleRadio">
-                                    <input type = "radio" id = "female" name = "maleFemaleBtn" value = "female">
-                                    <label for = "female">female</label>
-                                </div>
-                            </div>
-                            <input type = "text" id = "addressIn" placeholder = "address">
-                            <input type = "tel" id = "numberIn" placeholder = "number">
+                        <div class = 'inputBox'>
+                            <label for = 'lastNameIn'>Last Name</label>
+                            <input type = 'text' id = 'lastNameIn'>
                         </div>
-                        <div class = "patientRegSection">
-                            <input type = "text" id = "emailIn" placeholder = "email">
-                            <select name = "smoking">
-                                <option value = "">Smoking?</option>
-                                <option value = "yes">yes</option>
-                                <option value = "no">no</option>
-                            </select>
-                            <select name = "HeartE">
-                                <option value = "">Heart Events?</option>
-                                <option value = "yes">yes</option>
-                                <option value = "no">no</option>
-                            </select>
-                            <select name = "riskL">
-                                <option value = "">Health Risk?</option>
-                                <option value = "low">low</option>
-                                <option value = "medium">medium</option>
-                                <option value = "high">high</option>
-                            </select>
+                        <div class = 'inputBox'>
+                            <label for = 'dateIn'>DOB</label>
+                            <input type = 'date' id = 'dateIn'>
                         </div>
                     </div>
-                    <input type = "submit">
+                    <div class = 'inputSection'>
+                        <div class = 'inputBox'>
+                            <label for = 'phoneIn'>Phone Number</label>
+                            <input type = 'tel' id = 'phoneIn'>
+                        </div>
+                        <div class = 'inputBox'>
+                            <label for = 'emailIn'>Email</label>
+                            <input type = 'text' id = 'EmailIn'>
+                        </div>
+                        <div class = 'inputBox'>
+                            <label for = 'addressIn'>Address</label>
+                            <input type = 'text' id = 'addressIn'>
+                        </div>
+                    </div>
+                    <div class = 'inputSection'>
+                        <div class = 'inputBox' style = 'gap:1rem;'>
+                            <label for = 'maleFemaleRadio'>Sex</label>
+                            <div id = 'maleFemaleRadio'>
+                                <div>
+                                    Male
+                                    <input type = 'radio' id = 'maleIn' value = 'male'>
+                                </div>
+                                <div>
+                                    Female
+                                    <input type = 'radio' id = 'femaleIn' value = 'female'>
+                                </div>
+                                <div>
+                                    N/A
+                                    <input type = 'radio' id = 'NAIn' value = 'NA'>
+                                </div>
+                            </div>
+                        </div>
+                        <div class = 'inputBox'>
+                            <input type = 'submit' id = 'submitBtn' value = 'Add'>
+                        </div>
+                    </div>
                 </form>
-            </secion>
-            <section id = "patientListBox">
-                <h2>Patient List</h2>
-                <table id = "patientList">
-                    <tr class = 'dataField'>
-                        <td>Name</td>
-                        <td>DOB </td>
-                        <td>Last Visit</td>
-                        <td>Number</td>
-                    </tr>
-                </table>
+            </section>
+            <section class = "patientListBox">
+                <h3>Patient List</h3>
+                <div id = "patientList">
+                </div>
             </section>
 
         </div>
