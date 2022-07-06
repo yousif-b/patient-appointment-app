@@ -53,10 +53,6 @@ patients.forEach(p =>{
                 </table>
             </div>
             </div>
-            <div id = 'medication'>
-            <h2>Medication: </h2>
-            ${getMedication(p.medications)}
-            </div>
         `;
     }
 });

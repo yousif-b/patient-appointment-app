@@ -25,67 +25,68 @@
                    </div>
                 </nav>
             </header>
-            <section class = 'patientListBox'>
-                <h3>Register Patient</h3>
-                <form id = 'regForm'>
-                    <div class = 'inputSection'>
-                        <div class = 'inputBox'>
-                            <label for = 'firstNameIn'>First Name</label>
-                            <input type = 'text' id = 'firstNameIn'>
-                        </div>
-                        <div class = 'inputBox'>
-                            <label for = 'lastNameIn'>Last Name</label>
-                            <input type = 'text' id = 'lastNameIn'>
-                        </div>
-                        <div class = 'inputBox'>
-                            <label for = 'dateIn'>DOB</label>
-                            <input type = 'date' id = 'dateIn'>
-                        </div>
+            <div id = 'patientsPage'>
+                <section id = "patientListBox">
+                    <h3>Patient List</h3>
+                    <div id = "patientList">
                     </div>
-                    <div class = 'inputSection'>
-                        <div class = 'inputBox'>
-                            <label for = 'phoneIn'>Phone Number</label>
-                            <input type = 'tel' id = 'phoneIn'>
-                        </div>
-                        <div class = 'inputBox'>
-                            <label for = 'emailIn'>Email</label>
-                            <input type = 'text' id = 'EmailIn'>
-                        </div>
-                        <div class = 'inputBox'>
-                            <label for = 'addressIn'>Address</label>
-                            <input type = 'text' id = 'addressIn'>
-                        </div>
-                    </div>
-                    <div class = 'inputSection'>
-                        <div class = 'inputBox' style = 'gap:1rem;'>
-                            <label for = 'maleFemaleRadio'>Sex</label>
-                            <div id = 'maleFemaleRadio'>
-                                <div>
-                                    Male
-                                    <input type = 'radio' id = 'maleIn' value = 'male'>
-                                </div>
-                                <div>
-                                    Female
-                                    <input type = 'radio' id = 'femaleIn' value = 'female'>
-                                </div>
-                                <div>
-                                    N/A
-                                    <input type = 'radio' id = 'NAIn' value = 'NA'>
-                                </div>
+                </section>
+                <section id = 'regPatientBox'>
+                    <h3>Register Patient</h3>
+                    <form id = 'regForm'>
+                        <div class = 'inputSection'>
+                            <div class = 'inputBox'>
+                                <label for = 'firstNameIn'>First Name</label>
+                                <input type = 'text' id = 'firstNameIn'>
+                            </div>
+                            <div class = 'inputBox'>
+                                <label for = 'lastNameIn'>Last Name</label>
+                                <input type = 'text' id = 'lastNameIn'>
+                            </div>
+                            <div class = 'inputBox'>
+                                <label for = 'dateIn'>DOB</label>
+                                <input type = 'date' id = 'dateIn'>
                             </div>
                         </div>
-                        <div class = 'inputBox'>
-                            <input type = 'submit' id = 'submitBtn' value = 'Add'>
+                        <div class = 'inputSection'>
+                            <div class = 'inputBox'>
+                                <label for = 'phoneIn'>Phone Number</label>
+                                <input type = 'tel' id = 'phoneIn'>
+                            </div>
+                            <div class = 'inputBox'>
+                                <label for = 'emailIn'>Email</label>
+                                <input type = 'text' id = 'EmailIn'>
+                            </div>
+                            <div class = 'inputBox'>
+                                <label for = 'addressIn'>Address</label>
+                                <input type = 'text' id = 'addressIn'>
+                            </div>
                         </div>
-                    </div>
-                </form>
-            </section>
-            <section class = "patientListBox">
-                <h3>Patient List</h3>
-                <div id = "patientList">
-                </div>
-            </section>
-
+                        <div class = 'inputSection'>
+                            <div class = 'inputBox' style = 'gap:1rem;'>
+                                <label for = 'maleFemaleRadio'>Sex</label>
+                                <div id = 'maleFemaleRadio'>
+                                    <div>
+                                        Male
+                                        <input type = 'radio' id = 'maleIn' value = 'male'>
+                                    </div>
+                                    <div>
+                                        Female
+                                        <input type = 'radio' id = 'femaleIn' value = 'female'>
+                                    </div>
+                                    <div>
+                                        N/A
+                                        <input type = 'radio' id = 'NAIn' value = 'NA'>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class = 'inputBox'>
+                                <input type = 'submit' id = 'submitBtn' value = 'Add'>
+                            </div>
+                        </div>
+                    </form>
+                </section>
+            </div>
         </div>
         <script type = "module" src="handlePatients.js"></script>
     </body>

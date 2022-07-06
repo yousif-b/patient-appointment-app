@@ -1,17 +1,32 @@
 export default function renderPatients(patients){
+    function getPatientIcons(name, div){
+        fetch(`https://avatars.dicebear.com/api/male/${name}.svg`)
+        .then(response => response.text())
+        .then(svg => div.insertAdjacentHTML("afterbegin", svg))
+    }
+
+    function getItemList(itemArr){
+        let listHTML = `<div class = 'itemList'>`;
+        itemArr.forEach(i => {
+            listHTML+= `<h3> ${i} </h3>`;
+        })
+        return listHTML + '</div>';
+    }
+
     let patientList = document.getElementById('patientList');
     patients.forEach((p) => {
-        let div = document.createElement('div');
-        div.className = 'patientCard';
-        div.innerHTML = `
-                <div class = "cardPatientIcon">
-                </div>
+        let previewDiv = document.createElement('div');
+        let detailsDiv = document.createElement('div');
+        detailsDiv.className = 'patientDetails';
+        detailsDiv.style.display = 'none';
+        previewDiv.className = 'patientCard';
+        previewDiv.innerHTML = `
                 <div class = "cardInformationSection">
                     <div class = "cardInformationLabels">
                         <h3>Name</h3>
                         <h3>DOB</h3>
                         <h3>Phone</h3>
-                        <h3>Email</h3>
+                        <h3>Address</h3>
                     </div>
                     <div class = "cardInformationDetails">
                         <h3>${p.name}</h3>
@@ -36,10 +51,31 @@ export default function renderPatients(patients){
                 </div>
             `;
         
-        div.addEventListener('click', () => {
-            window.location.href = `patient.html?p=${p.name}`;
-        })
+        detailsDiv.innerHTML = `
+        <div class = 'medication'>
+        <h2>Medication: </h2>
+            ${getItemList(p.medications)}
+        </div>
+        <div class = 'symptoms'>
+        <h2>Symptoms: </h2>
+            ${getItemList(p.symptoms)}
+        </div>
+        <div class = "patientButtons">
+            <button class = "editPatientBtn"> Edit Patient</button>
+            <button class = "deletePatientBtn"> Delete </button>
+        </div>
+        `
+        getPatientIcons(p.name, previewDiv);
         
-        patientList.append(div);
+        previewDiv.addEventListener('click', () => {
+            if(detailsDiv.style.display == 'none'){
+                detailsDiv.style.display = 'flex';
+            }
+            else{
+                detailsDiv.style.display = 'none';
+            }
+        })
+        patientList.append(previewDiv);
+        patientList.append(detailsDiv);
     })
 }

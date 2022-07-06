@@ -11,7 +11,7 @@ if(!sessionStorage.getItem("patients")){
         sex: 'm',
         number: '173-153-8615',
         medications: ['ibuprofen', 'ibuprofen', 'ibuprofen'],
-        symptoms: ['cold', 'cold', 'cold'],
+        symptoms: ['cold', 'cold', 'cold', 'cold', 'cold', 'cold', 'cold', 'cold', 'cold'],
         appointments: [{date: '04/23/22', status: 'confirmed', time: '06:00PM'}, {date: '04/23/25', status: 'confirmed', time: '06:00PM'}],
     },
     {
