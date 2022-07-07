@@ -1,26 +1,25 @@
 export default function renderPatients(patients){
-    function getPatientIcons(name, div){
-        fetch(`https://avatars.dicebear.com/api/male/${name}.svg`)
+    function getPatientIcons(name, div, sex){
+        fetch(`https://avatars.dicebear.com/api/${sex}/${name}.svg`)
         .then(response => response.text())
         .then(svg => div.insertAdjacentHTML("afterbegin", svg))
     }
 
-    function getItemList(itemArr){
-        let listHTML = `<div class = 'itemList'>`;
-        itemArr.forEach(i => {
-            listHTML+= `<h3> ${i} </h3>`;
-        })
-        return listHTML + '</div>';
+    function getLatestAppointment(appointments){
+        console.log(appointments);
+        if(appointments.length>0){
+            return appointments[appointments.length-1].date;
+        }
+        else{
+            return 'none made';
+        }
     }
 
     let patientList = document.getElementById('patientList');
     patients.forEach((p) => {
-        let previewDiv = document.createElement('div');
-        let detailsDiv = document.createElement('div');
-        detailsDiv.className = 'patientDetails';
-        detailsDiv.style.display = 'none';
-        previewDiv.className = 'patientCard';
-        previewDiv.innerHTML = `
+        let div = document.createElement('div');
+        div.className = 'patientCard';
+        div.innerHTML = `
                 <div class = "cardInformationSection">
                     <div class = "cardInformationLabels">
                         <h3>Name</h3>
@@ -37,45 +36,25 @@ export default function renderPatients(patients){
                 </div>
                 <div class = "cardInformationSection">
                     <div class = "cardInformationLabels">
-                        <h3>Latest Appt</h3>
                         <h3>Height</h3>
                         <h3>Weight</h3>
                         <h3>Sex</h3>
+                        <h3>Latest Appt</h3>
                     </div>
                     <div class = "cardInformationDetails">
-                        <h3>${p.appointments[p.appointments.length-1].date}</h3>
                         <h3>${p.height} cm </h3>
                         <h3> ${p.weight} cm </h3>
                         <h3>${p.sex}</h3>
+                        <h3>${getLatestAppointment(p.appointments)}</h3>
                     </div>
                 </div>
             `;
+
+        getPatientIcons(p.name, div, p.sex);
         
-        detailsDiv.innerHTML = `
-        <div class = 'medication'>
-        <h2>Medication: </h2>
-            ${getItemList(p.medications)}
-        </div>
-        <div class = 'symptoms'>
-        <h2>Symptoms: </h2>
-            ${getItemList(p.symptoms)}
-        </div>
-        <div class = "patientButtons">
-            <button class = "editPatientBtn"> Edit Patient</button>
-            <button class = "deletePatientBtn"> Delete </button>
-        </div>
-        `
-        getPatientIcons(p.name, previewDiv);
-        
-        previewDiv.addEventListener('click', () => {
-            if(detailsDiv.style.display == 'none'){
-                detailsDiv.style.display = 'flex';
-            }
-            else{
-                detailsDiv.style.display = 'none';
-            }
+        div.addEventListener('click', () => {
+            window.location.href = `patient.html?p=${p.name}`;
         })
-        patientList.append(previewDiv);
-        patientList.append(detailsDiv);
+        patientList.append(div);
     })
 }

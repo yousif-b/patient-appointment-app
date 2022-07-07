@@ -164,15 +164,9 @@ nav form input{
 .patientCard{
     display:flex;
     flex-direction:row;
-    justify-content: space-evenly;
-    border-top: 1px solid #b6b6b6;
-}
-
-.patientDetails{
-    display:flex;
-    flex-direction: row;
     justify-content: space-around;
-    width:fit-content;
+    border-top: 1px solid #b6b6b6;
+
 }
 
 .patientCard svg{
@@ -213,41 +207,52 @@ nav form input{
     display:none;
 }
 
-.appointments{
+#setAppointmentForm{
+    display:flex;
+    align-items: baseline;
+    gap:1rem;
+    justify-content: center;
     padding:1rem;
-    width:43.5%;
-    margin:0;
+    border-radius:1rem;
 }
 
-.appointments table{
-    margin:0 auto;
+#setAppointmentForm input{
+    border-radius:2rem;
+    padding:.5rem;
+    border: 1px solid #b6b6b6;
+}
+
+#setAppointmentForm input[type = 'submit']{
+    background-color: #605bff;
+    color: white                      ;
+    border-style:none;
+    margin-left:2rem;
     padding:1rem;
-    border-radius: .5rem;
-    width: 100%;
 }
 
 .patientButtons{
     display:flex;
-    flex-direction: column;
+    flex-direction: row;
     justify-content: center;
     border-radius: 2rem;
+    margin: 0 0 1rem 0;
     gap:2rem;
 }
 
 .patientButtons button{
     padding:1rem;
-    font-size:larger;
     border-radius:2rem;
     border-style:none;
+    width:fit-content;
 }
 
 .editPatientBtn{
-    background-color:#ffcb08;
+    background-color:#ffd84a;
     color:white;
 }
 
 .deletePatientBtn{
-    background-color: #fc3517;
+    background-color: #ff595f;
     color:white;
 }
 
@@ -384,60 +389,97 @@ aside ul{
 }
 
 #patientInformation{
-    background-color: white;
-    border-radius:0.5rem;
     padding:1rem;
     display:flex;
-    flex-direction:row;
+    flex-direction:column;
     flex-wrap: wrap;
-    justify-content: left;
-    gap:2rem;
+    justify-content: center;
+}
+
+.info{
+    display:flex;
+    flex-direction: column;
+    justify-content: space-around;
+}
+
+.infoBlock{
+    display:flex;
+    justify-content: center;
+    gap:1rem;
 }
 
 #patientUpperSection{
-    display:flex;
-    flex-direction:column;
-    gap:2rem;
-    flex-grow:3;
-}
-
-#medication{
     background-color: white;
     border-radius:0.5rem;
-    padding:1rem;
+    display:flex;
+    flex-direction:column;
     flex-grow:1;
-    height:50%;
+    padding: 2rem 0 0 0;
+}
+
+.listItem{
+    display:flex;
+    align-items: baseline;
+    border: 1px solid #605bff;
+    border-radius: 2rem;
+    gap:.5rem;
+    overflow:hidden;
+    color:#404040;
+    padding: 0 1rem 0 0;
+}
+
+.listItem a{
+    color:white;
+    background-color: #605bff;
+    padding:1.1rem;
+    text-decoration: none;
 }
 
 #appointments{
+    display:flex;
+    flex-direction: column;
     background-color: white;
     border-radius:0.5rem;
     padding:1rem;
+    flex-grow:3;
+    gap:1rem;
+    height:fit-content;
 }
 
-#appointments table{
-    margin:0 auto;
-    padding:1rem;
-    border-radius: .5rem;
-    width: 100%;
+.appointment{
+    display:flex;
+    justify-content: space-around;
+}
+
+.appointment button{
+    color:white;
+    border-radius:2rem;
+    border-style:none;
+    padding: 1rem 2rem 1rem 2rem;
+}
+
+.appointmentBtns{
+    display:flex;
+    gap:1rem;
+}
+
+.appointmentCancelBtn{
+    background-color: #605bff;
+}
+
+.appointmentConfirmBtn{
+    background-color: #605bff;
+}
+
+.appointmentDeleteBtn{
+    background-color: #ff595f;
 }
 
 #patientName{
     border-radius:.5rem;
-    align-self:center;
-}
-
-#info{
-    display:flex;
-    flex-direction:column;
-}
-
-.symptoms{
-    width:25%;
-}
-
-.medication{
-    width: 25%;
+    align-self: center;
+    width:15rem;
+    text-align: center;
 }
 
 .itemList{
@@ -448,9 +490,6 @@ aside ul{
 }
 
 @media only screen and (max-width: 1000px) {
-    body{
-        font-size: initial;
-    }
     nav{
         text-align:center;
         gap:0;
@@ -522,10 +561,6 @@ aside ul{
         margin: 1rem 0 0 0;
     }
 
-    .patientButtons button{
-        font-size:unset;
-    }
-
     .patientCard{
         display:flex;
         width:100%;
@@ -533,12 +568,6 @@ aside ul{
         justify-content: space-evenly;
         border-top: 1px solid #b6b6b6;
         margin: 0 auto;
-    }
-
-    .appointments table{
-        margin: 0;
-        width:100%;
-        border-radius: unset;
     }
 
     #regForm{
@@ -597,19 +626,5 @@ aside ul{
 
     #regPatientBox h3{
         padding-left:1rem;
-    }
-
-    .patientDetails{
-        width:100%;
-        margin: 0 0 1rem 0;
-        flex-direction: column;
-    }
-
-    .medication{
-        width:100%;
-    }
-
-    .symptoms{
-        width:100%;
     }
   }
