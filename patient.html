@@ -31,8 +31,8 @@
                             <div id = 'patientIcon'></div>
                             <h1 class = 'infoValue'></h1>
                         </div>
-                        <div class = 'infoBlock'>
-                            <div class = 'info' style = 'color:#605bff;'>
+                        <div id = 'infoBlock'>
+                            <div id = 'info' style = 'color:#605bff;'>
                                 <p> DOB:</p>
                                 <p> Height:</p>
                                 <p> Weight:</p>
@@ -41,7 +41,7 @@
                                 <p> Email:</p>
                                 <p> Address:</p>
                             </div>
-                            <div class = 'info'>
+                            <div id = 'infoValues'>
                                 <p class = 'infoValue'></p>
                                 <p class = 'infoValue'></p>
                                 <p class = 'infoValue'></p>
@@ -52,21 +52,21 @@
                             </div>
                         </div>
                     </div>
-                    <div class = "patientButtons">
-                        <button class = "editPatientBtn"> Edit </button>
-                        <button class = "deletePatientBtn"> Delete Patient </button>
+                    <div id = "patientButtons">
+                        <button id = "editPatientBtn"> Edit </button>
+                        <button id = "deletePatientBtn"> Delete Patient </button>
                     </div>
                 </div>
                 <div id = 'appointments'> 
                     <h2>Appointments: </h2>
                     <div id = 'setAppointmentBox'>
-                        <form id = 'setAppointmentForm'>
+                        <div id = 'setAppointmentForm'>
                             <label for = 'appointmentDateIn'>Date: </label>
                             <input type = 'date' id = 'appointmentDateIn'>
                             <label for = 'timeIn'>DOB</label>
                             <input type = 'time' id = 'timeIn'>
                             <input type = 'submit' id = 'addAppointmentBtn' value = 'Set Appointment' />
-                        </form>
+                        </div>
                     </div>
                 </div>
             </section>

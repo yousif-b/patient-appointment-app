@@ -5,7 +5,7 @@ let patients;
 if(!sessionStorage.getItem("patients")){
     patients = [{
         name: 'Njord Liupold',
-        dob: '05/23/1996',
+        dob: '1996-08-05',
         height: 180,
         weight: 87,
         sex: 'male',
@@ -16,7 +16,7 @@ if(!sessionStorage.getItem("patients")){
     },
     {
         name: 'Dashiell Vinnie',
-        dob: '05/23/1996',
+        dob: '1996-08-05',
         height: 180,
         weight: 87,
         sex: 'male',
@@ -27,7 +27,7 @@ if(!sessionStorage.getItem("patients")){
     },
     {
         name: 'Pamela Crispian',
-        dob: '05/23/1996',
+        dob: '1996-08-05',
         height: 180,
         weight: 87,
         sex: 'female',
@@ -38,7 +38,7 @@ if(!sessionStorage.getItem("patients")){
     },
     {
         name: 'Joslyn Janette',
-        dob: '05/23/1996',
+        dob: '1996-08-05',
         height: 180,
         weight: 87,
         sex: 'female',
@@ -49,7 +49,7 @@ if(!sessionStorage.getItem("patients")){
     },
     {
         name: 'Corbin Charlee',
-        dob: '05/23/1996',
+        dob: '1996-08-05',
         height: 180,
         weight: 87,
         sex: 'male',
@@ -60,7 +60,7 @@ if(!sessionStorage.getItem("patients")){
     },
     {
         name: 'Ryland Maxine',
-        dob: '05/23/1996',
+        dob: '1996-08-05',
         height: 180,
         weight: 87,
         sex: 'male',
@@ -71,7 +71,7 @@ if(!sessionStorage.getItem("patients")){
     },
     {
         name: 'Jemma Janele',
-        dob: '05/23/1996',
+        dob: '1996-08-05',
         height: 180,
         weight: 87,
         sex: 'female',
@@ -82,7 +82,7 @@ if(!sessionStorage.getItem("patients")){
     },
     {
         name: 'Herbie Mack',
-        dob: '05/23/1996',
+        dob: '1996-08-05',
         height: 180,
         weight: 87,
         sex: 'male',
