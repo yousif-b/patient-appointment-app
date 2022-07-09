@@ -1,4 +1,5 @@
-let patientBox = document.getElementById('patientBox');
+import getStandardTime from './getStandardTime.js'
+
 let urlParams = new URLSearchParams(window.location.search);
 let patientName = urlParams.get('p');
 let patients = JSON.parse(sessionStorage.getItem("patients"));
@@ -32,6 +33,7 @@ function displayAppointments(patient, pIndex){
             confirmBtn.innerHTML = '&#10003;'
             cancelBtn.innerHTML = '&#10005;';
             deleteBtn.innerHTML = 'delete';
+
             confirmBtn.addEventListener('click', () => {
                 patients[pIndex].appointments[aIndex].status = 'confirmed';
                 sessionStorage.setItem("patients", JSON.stringify(patients));
@@ -47,11 +49,13 @@ function displayAppointments(patient, pIndex){
                 sessionStorage.setItem("patients", JSON.stringify(patients));
                 location.reload();
             })
+
             appointmentDiv.innerHTML = `
             <p> ${date.getMonth() +1}/${date.getDate()}/${date.getFullYear()} </p>
-            <p> ${a.time} </p>
+            <p> ${getStandardTime(a.time)} </p>
             <p> ${a.status} </p>
             `;
+
             buttonsDiv.append(confirmBtn);
             buttonsDiv.append(cancelBtn);
             buttonsDiv.append(deleteBtn);
@@ -93,6 +97,7 @@ patients.forEach((patient, pIndex) =>{
         getPatientIcon(patient.name, patient.sex);
         displayAppointments(patient , pIndex);
         createAppointment(pIndex);
+
         editPatientBtn.addEventListener('click', () => {
             let nameIn = document.createElement('input');
             let dobIn = document.createElement('input');

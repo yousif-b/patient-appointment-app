@@ -1,7 +1,7 @@
 export default function renderPatients(patients){
     let submitBtn  = document.getElementById('submitBtn');
     submitBtn.addEventListener('click', () => {
-        let pData = {
+        let newPatientData = {
             name: document.getElementById('nameIn').value,
             dob: document.getElementById('dateIn').value,
             height: document.getElementById('weightIn').value,
@@ -12,20 +12,20 @@ export default function renderPatients(patients){
             address: document.getElementById('addressIn').value,
         }
 
-        patients.push(pData);
+        patients.push(newPatientData);
         sessionStorage.setItem("patients", JSON.stringify(patients));
         location.reload();
     })
     ;
-    function getPatientIcons(name, div, sex){
+    function getEachPatientIcon(name, div, sex){
         fetch(`https://avatars.dicebear.com/api/${sex}/${name}.svg`)
         .then(response => response.text())
         .then(svg => div.insertAdjacentHTML("afterbegin", svg))
     }
 
     function getLatestAppointment(appointments){
-        let date = new Date(appointments[appointments.length-1].date);
         if(appointments){
+            let date = new Date(appointments[appointments.length-1].date);
             return `${date.getMonth()+1}/${date.getDate()}/${date.getFullYear()}`;
         }
         else{
@@ -36,6 +36,7 @@ export default function renderPatients(patients){
     let patientList = document.getElementById('patientList');
     patients.forEach((p) => {
         let div = document.createElement('div');
+        let dobDate = new Date(p.dob);
         div.className = 'patientCard';
         div.innerHTML = `
                 <div class = "cardInformationSection">
@@ -47,7 +48,7 @@ export default function renderPatients(patients){
                     </div>
                     <div class = "cardInformationDetails">
                         <h3>${p.name}</h3>
-                        <h3>${p.dob}</h3>
+                        <h3>${dobDate.getMonth()+1}/${dobDate.getDate()}/${dobDate.getFullYear()}</h3>
                         <h3>${p.number}</h3>
                         <h3>${p.address}</h3>
                     </div>
@@ -68,7 +69,7 @@ export default function renderPatients(patients){
                 </div>
             `;
 
-        getPatientIcons(p.name, div, p.sex);
+        getEachPatientIcon(p.name, div, p.sex);
         
         div.addEventListener('click', () => {
             window.location.href = `patient.html?p=${p.name}`;

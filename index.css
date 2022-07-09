@@ -32,30 +32,10 @@ body{
 nav{
     display:flex;
     justify-content:space-around;
-    gap:30%;
+    gap:45%;
     background-color: #605bff;
     overflow: hidden;
-
-}
-
-nav form{
-    display: flex;
-    margin: 1.5rem 0 1.5rem 0;
-}
-
-nav form button{
-    padding:.5rem 1rem .5rem 1rem;
-    border-radius: 1rem;
-    border-style:none;
-    background-color: white;
-    color:#605bff;
-    margin-left:.5rem;
-}
-
-nav form input{
-    border-radius: 1rem;
-    padding:.5rem;
-    border-style:none;
+    color:white;
 }
 
 #searchPatients{
@@ -71,7 +51,7 @@ nav form input{
 
 #hamburgerMenuBtn div {
     width: 2em;
-    height: .4em;
+    height: .35em;
     border-radius:1em;
     background-color: white;
     margin: 6px 0;
@@ -150,10 +130,6 @@ nav form input{
     border: 1px solid #b6b6b6;
 }
 
-.appointmentConfirmBtn{
-    background-color: aquamarine;
-}
-
 #submitBtn{
     margin-top:1rem;
     color:white;
@@ -192,6 +168,7 @@ nav form input{
     display:flex;
     align-items: flex-start;
     gap:1rem;
+    width:17.5rem;
 }
 
 .cardInformationLabels{
@@ -316,16 +293,12 @@ nav form input{
 }
 
 #upcomingAppointments tr:nth-child(even) {
-    background-color: #fafafa;
+    background-color: #eeeeee;
 }
 
-.dataField{
+.tableLabel{
     background-color: #605bff;
     color:white;
-}
-
-.dataField td:hover{
-    background-color:#514ecc;
 }
 
 #reminderBox{
@@ -333,26 +306,28 @@ nav form input{
     margin-left:1rem;
     display: flex;
     flex-direction:column;
-    max-height:20rem;
-    height:auto;
+    height:fit-content;
+    width:20rem;
     border-radius: .5rem;
+    gap:1rem;
 }
 
-#reminderBox form{
-    border-top: 1px solid #404040;
-    margin: 0 0 .5rem -.25rem;
-    padding:.5rem 0 .5rem 0;
+#reminderBox h3{
+    border-bottom: 1px solid #b6b6b6;
+    padding-bottom:1rem;
+    margin: 1rem 0 0 0;
 }
 
-#reminderBox form input{
+#reminderIn{
     border: 1px solid #404040;
     border-radius:.5rem;
     padding:.5rem;
-    width:70%;
     margin-right:.5rem;
+    width:70%;
 }
 
-#reminderBox form button{
+
+#addReminderBtn{
     background-color: #605bff;
     color:white;
     width:15%;
@@ -362,14 +337,15 @@ nav form input{
 }
 
 .reminder{
-    direction:rtl;
+    display:flex;
     text-align:left;
 }
 
 .reminder input[type='checkbox']{
     transform: scale(1.5);
+    margin-right:1rem;
     accent-color: #605bff;
-    margin:0 .5rem 1rem 0;
+    align-self: baseline;
 }
 
 
@@ -463,22 +439,29 @@ aside ul{
     flex-direction: column;
     background-color: white;
     border-radius:0.5rem;
-    padding:1rem;
     flex-grow:3;
-    gap:1rem;
     height:fit-content;
+}
+
+#appointments h2{
+    padding:1rem;
 }
 
 .appointment{
     display:flex;
     justify-content: space-around;
+    padding: 1rem 0 1rem 0;
+}
+
+.appointment:nth-child(odd){
+    background-color:#eeeeee;
 }
 
 .appointment button{
     color:white;
     border-radius:.5rem;
     border-style:none;
-    padding: 1rem 2rem 1rem 2rem;
+    padding: .5rem 1.5rem .5rem 1.5rem;
 }
 
 .appointmentBtns{
@@ -516,6 +499,10 @@ aside ul{
     nav{
         text-align:center;
         gap:0;
+    }
+
+    nav h1{
+        align-self: center;
     }
 
     nav ul{
@@ -578,6 +565,14 @@ aside ul{
 
     #reminderBox{
         margin:1rem 0 0 0;
+        width:100%;
+        padding:0;
+        justify-content: space-around;
+        padding:0 0 1rem 0;
+    }
+
+    #reminderIn{
+        width:75%;
     }
 
     #patientListBox{
@@ -645,5 +640,47 @@ aside ul{
 
     #regPatientBox h3{
         padding-left:1rem;
+    }
+
+    #appointments{
+        display:flex;
+        flex-direction: column;
+        background-color: white;
+        border-radius:0.5rem;
+        flex-grow:unset;
+        width:100%;
+        height:fit-content;
+    }
+
+    .appointment{
+        display:flex;
+        justify-content: space-around;
+        flex-wrap:wrap;
+        width:100%;
+    }
+
+    .appointment button{
+        padding: 1rem;
+        align-self: center;
+    }
+
+    #patientBox{
+        width:100%;
+        margin: 1rem 0 0 0;
+    }
+
+    #setAppointmentForm{
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+    }
+
+    #setAppointmentForm input[type = 'submit']{
+        margin-left:unset;
+    }
+
+    .appointmentBtns{
+        width:100%;
+        justify-content: center;
     }
   }

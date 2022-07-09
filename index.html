@@ -9,15 +9,13 @@
         <div id = "wrapper">
             <header>
                 <nav>
-                    <form>
-                        <input type="text" placeholder="Search Paients" name="search">
-                        <button type="submit">Q</button>
-                    </form>
-                   <div id = "navItems">
+                    <h1>Dashboard</h1>
+                    <div id = "navItems">
                         <a href = "index.html">Home</a>
                         <a href = "patients.html">Patients</a>
-                   </div>
-                   <div id = "hamburgerMenuBtn">
+                    </div>
+                    <div id = "hamburgerMenuBtn">
+                        <div></div>
                         <div></div>
                         <div></div>
                    </div>
@@ -34,12 +32,12 @@
                         Sed et convallis urna.</p>
                 </div>
                 <div class = "stats">
-                    <h3>Appointments</h3>
-                    <h1>16,458</h1>
+                    <h3>Total Appointments</h3>
+                    <h1 id = 'appointmentsCount'>0</h1>
                 </div>
                 <div class = "stats">
                     <h3>Appointments Cancelled</h3>
-                    <h1>200</h1>
+                    <h1 id = 'appointmentsCancelledCount'>0</h1>
                 </div>
                 <button class = "navigateStats">L</button>
                 <button class = "navigateStats">R</button>
@@ -48,95 +46,21 @@
             <div id = "dashboardBottomRow">
                 <section id = "upcomingAppointments">
                     <h3>Upcoming Appointments</h3>
-                    <table>
-                        <tr class = "dataField">
+                    <table id = 'upcomingAppointmentsTable'>
+                        <tr class = "tableLabel">
                             <td>Name</td>
                             <td>Date</td>
                             <td>Time</td>
                             <td>Status</td>
-                        </tr>
-                        <tr>
-                            <td>Rony Brawa</td>
-                            <td>05/16/22</td>
-                            <td>06:00 PM</td>
-                            <td>Confirmed</td>
-                        </tr>
-                        <tr>
-                            <td>Rony Brawa</td>
-                            <td>05/16/22</td>
-                            <td>06:00 PM</td>
-                            <td>Confirmed</td>
-                        </tr>
-                        <tr>
-                            <td>Rony Brawa</td>
-                            <td>05/16/22</td>
-                            <td>06:00 PM</td>
-                            <td>Confirmed</td>
-                        </tr>
-                        <tr>
-                            <td>Rony Brawa</td>
-                            <td>05/16/22</td>
-                            <td>06:00 PM</td>
-                            <td>Confirmed</td>
-                        </tr>
-                        <tr>
-                            <td>Rony Brawa</td>
-                            <td>05/16/22</td>
-                            <td>06:00 PM</td>
-                            <td>Confirmed</td>
-                        </tr>
-                        <tr>
-                            <td>Rony Brawa</td>
-                            <td>05/16/22</td>
-                            <td>06:00 PM</td>
-                            <td>Confirmed</td>
-                        </tr>
-                        <tr>
-                            <td>Rony Brawa</td>
-                            <td>05/16/22</td>
-                            <td>06:00 PM</td>
-                            <td>Confirmed</td>
-                        </tr>
-                        <tr>
-                            <td>Rony Brawa</td>
-                            <td>05/16/22</td>
-                            <td>06:00 PM</td>
-                            <td>Confirmed</td>
-                        </tr>
-                        <tr>
-                            <td>Rony Brawa</td>
-                            <td>05/16/22</td>
-                            <td>06:00 PM</td>
-                            <td>Confirmed</td>
-                        </tr>
-                        <tr>
-                            <td>Rony Brawa</td>
-                            <td>05/16/22</td>
-                            <td>06:00 PM</td>
-                            <td>Confirmed</td>
-                        </tr>
-                        <tr>
-                            <td>Rony Brawa</td>
-                            <td>05/16/22</td>
-                            <td>06:00 PM</td>
-                            <td>Confirmed</td>
                         </tr>
                     </table>
                 </section>
 
                 <aside id = "reminderBox">
                     <h3>Reminders</h3>
-                    <form>
-                        <input type="text" placeholder="Add Reminder" name="reminderAdd">
-                        <button type="submit">Add</button>
-                    </form>
-                    <div class = 'reminder'>
-                        <label>adipiscing leit</label>
-                        <input type="checkbox">
-                    </div>
-                    <div class = 'reminder'>
-                        <label>adipiscing leit</label>
-                        <input type="checkbox">
+                    <div>
+                        <input type="text" placeholder="Add Reminder" id="reminderIn">
+                        <button type="submit" id = 'addReminderBtn'>Add</button>
                     </div>
                 </aside>
         </div>
