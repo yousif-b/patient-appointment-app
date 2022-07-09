@@ -1,22 +1,37 @@
 export default function renderPatients(patients){
     let submitBtn  = document.getElementById('submitBtn');
     submitBtn.addEventListener('click', () => {
-        let newPatientData = {
-            name: document.getElementById('nameIn').value,
-            dob: document.getElementById('dateIn').value,
-            height: document.getElementById('weightIn').value,
-            weight: document.getElementById('heightIn').value,
-            sex: document.getElementById('sexIn').value,
-            number: document.getElementById('phoneIn').value,
-            email: document.getElementById('emailIn').value,
-            address: document.getElementById('addressIn').value,
-        }
+        let data = [document.getElementById('nameIn'), document.getElementById('dateIn'), document.getElementById('weightIn'),
+        document.getElementById('heightIn'), document.getElementById('sexIn'), document.getElementById('phoneIn'),
+        document.getElementById('emailIn'), document.getElementById('addressIn')];
+        let counter = 0;
 
-        patients.push(newPatientData);
-        sessionStorage.setItem("patients", JSON.stringify(patients));
-        location.reload();
-    })
-    ;
+        data.forEach(d => {
+            if(!d.value){
+                d.style = 'border-color: #ff595f'
+            }
+            else{
+                counter++;
+            }
+        })
+        if(counter == 8){
+            let newPatientData = {
+                name: data[0].value,
+                dob: data[1].value,
+                height: data[2].value,
+                weight: data[3].value,
+                sex: data[4].value,
+                number: data[5].value,
+                email: data[6].value,
+                address: data[7].value,
+            }
+
+            patients.push(newPatientData);
+            sessionStorage.setItem("patients", JSON.stringify(patients));
+            location.reload();
+        }
+    });
+    
     function getEachPatientIcon(name, div, sex){
         fetch(`https://avatars.dicebear.com/api/${sex}/${name}.svg`)
         .then(response => response.text())

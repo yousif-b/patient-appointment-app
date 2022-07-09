@@ -1,4 +1,7 @@
 import getStandardTime from './getStandardTime.js'
+import hamburgerMenuBtn from './hamburgerMenuBtn.js';
+
+hamburgerMenuBtn();
 
 let urlParams = new URLSearchParams(window.location.search);
 let patientName = urlParams.get('p');
@@ -137,8 +140,9 @@ patients.forEach((patient, pIndex) =>{
 
             discardBtn.innerHTML = 'discard';
             saveBtn.innerHTML = 'save';
-            saveBtn.style = 'background-color: #605BFF';
-            discardBtn.style = 'background-color: #FF595F';
+            
+            discardBtn.id = 'discardPatientBtn';
+            saveBtn.id = 'savePatientBtn';
 
             discardBtn.addEventListener('click', () => {location.reload()});
             saveBtn.addEventListener('click', () => {

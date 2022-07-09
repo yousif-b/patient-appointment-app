@@ -55,7 +55,21 @@ nav{
     border-radius:1em;
     background-color: white;
     margin: 6px 0;
-  }
+}
+
+#hamburgerMenu{
+    background-color: #514ecc;
+    display:none;
+    flex-direction:column;
+    padding:.5rem;
+}
+
+#hamburgerMenu a{
+    color:white;
+    text-decoration:none;
+    font-size:x-large;
+    padding:1rem;
+}
 
 #appointmentStats{
     display:flex;
@@ -63,7 +77,6 @@ nav{
     flex-grow:5;
     gap: 2rem;
     margin: 2rem 10% 0 10%;
-    color:#404040;
 }
 
 #patientsPage{
@@ -138,6 +151,10 @@ nav{
     border-style:none;
 }
 
+#submitBtn:hover{
+    background-color: #514ecc;
+}
+
 #maleFemaleRadio{
     display:flex;
     flex-direction: row;
@@ -162,6 +179,10 @@ nav{
 
 .cardEditPatientBtn{
     background-color: #ffcb08;
+}
+
+.cardEditPatientBtn:hover{
+    background-color: #d6a900;
 }
 
 .cardInformationSection{
@@ -214,6 +235,10 @@ nav{
     padding:1rem;
 }
 
+#setAppointmentForm input[type = 'submit']:hover{
+    background-color: #514ecc;
+}
+
 #patientButtons{
     display:flex;
     flex-direction: row;
@@ -230,12 +255,36 @@ nav{
     color:white;
 }
 
+#savePatientBtn{
+    background-color: #605bff;
+}
+
+#savePatientBtn:hover{
+    background-color: #514ecc;
+}
+
+#discardPatientBtn{
+    background-color:#ff595f
+}
+
+#discardPatientBtn:hover{
+    background-color: #d64b50;
+}
+
 #editPatientBtn{
     background-color:#ffd84a;
 }
 
+#editPatientBtn:hover{
+    background-color:#d6a900;
+}
+
 #deletePatientBtn{
     background-color: #ff595f;
+}
+
+#deletePatientBtn:hover{
+    background-color: #d64b50;
 }
 
 .stats{
@@ -265,7 +314,6 @@ nav{
 }
 
 #dashboardBottomRow{
-    color:#404040;
     display:flex;
     flex-grow:4;
     justify-content: center;
@@ -334,6 +382,10 @@ nav{
     border-style:none;
     padding:.5rem;
     border-radius:.5rem;
+}
+
+#addReminderBtn:hover{
+    background-color: #514ecc;
 }
 
 .reminder{
@@ -423,7 +475,6 @@ aside ul{
     border-radius: 2rem;
     gap:.5rem;
     overflow:hidden;
-    color:#404040;
     padding: 0 1rem 0 0;
 }
 
@@ -473,12 +524,24 @@ aside ul{
     background-color: #ffcb08;
 }
 
+.appointmentCancelBtn:hover{
+    background-color: #d6a900;
+}
+
 .appointmentConfirmBtn{
     background-color: #605bff;
 }
 
+.appointmentConfirmBtn:hover{
+    background-color: #514ecc;
+}
+
 .appointmentDeleteBtn{
     background-color: #ff595f;
+}
+
+.appointmentDeleteBtn:hover{
+    background-color: #d64b50;
 }
 
 #patientName{
