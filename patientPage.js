@@ -28,7 +28,6 @@ function displayAppointments(patient, pIndex){
             let cancelBtn = document.createElement('button');
             let confirmBtn = document.createElement('button');
             let deleteBtn = document.createElement('button');
-            let date = new Date(a.date);
             appointmentDiv.className = 'appointment';
             buttonsDiv.className = 'appointmentBtns';
             confirmBtn.className = 'appointmentConfirmBtn';
@@ -55,7 +54,7 @@ function displayAppointments(patient, pIndex){
             })
 
             appointmentDiv.innerHTML = `
-            <p> ${date.getMonth() +1}/${date.getDate()}/${date.getFullYear()} </p>
+            <p> ${getStandardDate(a.date)} </p>
             <p> ${getStandardTime(a.time)} </p>
             <p> ${a.status} </p>
             `;
