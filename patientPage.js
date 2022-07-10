@@ -11,7 +11,7 @@ let infoValues = document.getElementsByClassName('infoValue');
 let appointmentsList = document.getElementById('appointments');
 let editPatientBtn = document.getElementById('editPatientBtn');
 let deletePatientBtn = document.getElementById('deletePatientBtn');
-let infoValuesBox = document.getElementById('infoValues');
+let infoBlockBox = document.getElementById('infoBlock');
 let patientNameBox = document.getElementById('patientName');
 
 function getPatientIcon(name, sex){
@@ -113,7 +113,7 @@ patients.forEach((patient, pIndex) =>{
             let saveBtn = document.createElement('button');
             nameIn.type = 'text';
             nameIn.style = 'margin-top:1rem;';
-            dobIn.type = 'date';
+            dobIn.type = 'text';
             heightIn.type = 'number';
             weightIn.type = 'number';
             sexIn.innerHTML = `
@@ -125,7 +125,7 @@ patients.forEach((patient, pIndex) =>{
             addressIn.type = 'text';
 
             nameIn.value = patient.name;
-            dobIn.value = getStandardDate(patient.dob);
+            dobIn.value = patient.dob;
             heightIn.value = patient.height;
             weightIn.value = patient.weight;
             sexIn.value = patient.sex;
@@ -134,8 +134,8 @@ patients.forEach((patient, pIndex) =>{
             addressIn.value = patient.address;
 
             patientNameBox.querySelector('h1').replaceWith(nameIn);
-            infoValuesBox.replaceChildren(dobIn, heightIn, weightIn, sexIn, numberIn,
-                emailIn, addressIn);
+            infoBlockBox.replaceChildren(dobIn, heightIn, weightIn, sexIn, numberIn,
+            emailIn, addressIn);
 
             discardBtn.innerHTML = 'discard';
             saveBtn.innerHTML = 'save';
@@ -146,7 +146,7 @@ patients.forEach((patient, pIndex) =>{
             discardBtn.addEventListener('click', () => {location.reload()});
             saveBtn.addEventListener('click', () => {
                 patients[pIndex].name = nameIn.value;
-                patients[pIndex].dob = dateIn.value;
+                patients[pIndex].dob = dobIn.value;
                 patients[pIndex].height = heightIn.value;
                 patients[pIndex].weight = weightIn.value;
                 patients[pIndex].sex = sexIn.value;

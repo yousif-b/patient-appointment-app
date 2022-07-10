@@ -1,3 +1,5 @@
+import getStandardDate from "./getStandardDate.js";
+
 export default function renderPatients(patients){
     let submitBtn  = document.getElementById('submitBtn');
     submitBtn.addEventListener('click', () => {
@@ -17,6 +19,7 @@ export default function renderPatients(patients){
         if(counter == 8){
             let newPatientData = {
                 name: data[0].value,
+                appointments: [],
                 dob: data[1].value,
                 height: data[2].value,
                 weight: data[3].value,
@@ -39,8 +42,8 @@ export default function renderPatients(patients){
     }
 
     function getLatestAppointment(appointments){
-        if(appointments){
-            let date = new Date(appointments[appointments.length-1].date);
+        if(appointments.length !== 0){
+            let date = new Date(appointments[0].date);
             return `${date.getMonth()+1}/${date.getDate()}/${date.getFullYear()}`;
         }
         else{
@@ -51,7 +54,6 @@ export default function renderPatients(patients){
     let patientList = document.getElementById('patientList');
     patients.forEach((p) => {
         let div = document.createElement('div');
-        let dobDate = new Date(p.dob);
         div.className = 'patientCard';
         div.innerHTML = `
                 <div class = "cardInformationSection">
@@ -62,7 +64,7 @@ export default function renderPatients(patients){
                         </div>
                         <div class = 'dataField'>
                             <label class = 'dataLabel'> DOB </label>
-                            <p> ${dobDate.getMonth()+1}/${dobDate.getDate()}/${dobDate.getFullYear()} </p>
+                            <p> ${getStandardDate(p.dob)} </p>
                         </div>
                         <div class = 'dataField'>
                             <label class = 'dataLabel'> Phone </label>

@@ -90,10 +90,11 @@ nav{
     margin-top:1rem;
     border-radius:.5rem;
     padding: 1rem;
-    flex-grow: 2;
+    width:20rem;
     display:flex;
     flex-direction: column;
     height: fit-content;
+    flex-grow: 1;
 }
 
 #patientListBox{
@@ -101,7 +102,7 @@ nav{
     margin-top:1rem;
     border-radius:.5rem;
     padding: 1rem;
-    flex-grow:10;
+    flex-grow:2;
 }
 
 #regForm{
@@ -188,6 +189,7 @@ nav{
     display:flex;
     align-items: flex-start;
     width:40rem;
+    gap:1rem;
 }
 
 .cardInformationDetails{
@@ -450,12 +452,31 @@ aside ul{
     display:flex;
     flex-direction:column;
     justify-content: space-around;
+    width:10rem;
 }
 
 #infoBlock{
     display:flex;
+    flex-direction: row;
+    flex-wrap:wrap;
+    width:20rem;
     justify-content: center;
-    gap:1rem;
+    margin: 0 auto;
+}
+
+#infoBlock .dataField{
+    width:15rem;
+    justify-content: baseline;
+}
+
+#infoBlock .dataLabel{
+    width:10rem;
+}
+
+#infoBlock input{
+    width:15rem;
+    margin: 1rem 0 1rem 0;
+    align-self:flex-start;
 }
 
 #patientUpperSection{
@@ -628,6 +649,10 @@ aside ul{
         padding:0;
     }
 
+    #upcomingAppointments th,td{
+        padding:.5rem;
+    }
+
     #appointmentStats{
         flex-wrap: wrap;
         justify-content:space-between;
@@ -760,5 +785,9 @@ aside ul{
     .appointmentBtns{
         width:100%;
         justify-content: center;
+    }
+
+    #infoBlock{
+        width:100%;
     }
   }
