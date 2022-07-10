@@ -1,4 +1,5 @@
 import getStandardTime from "./getStandardTime.js";
+import getStandardDate from "./getStandardDate.js";
 
 export default function getUpcomingAppointments(patients){
     let upcomingApppointmentsList = document.getElementById('upcomingAppointmentsTable');
@@ -37,11 +38,11 @@ export default function getUpcomingAppointments(patients){
                 if(new Date(a.date) > new Date()){
                     let apptObj = {
                         name: p.name,
-                        date: a.date,
+                        date: getStandardDate(a.date),
                         time: a.time,
                         status: a.status,
                     };
-                    patientsAppointments.push(apptObj);
+                    patientsAppointments.unshift(apptObj);
                 }
             })
         }

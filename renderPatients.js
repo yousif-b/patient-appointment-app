@@ -26,7 +26,7 @@ export default function renderPatients(patients){
                 address: data[7].value,
             }
 
-            patients.push(newPatientData);
+            patients.unshift(newPatientData);
             sessionStorage.setItem("patients", JSON.stringify(patients));
             location.reload();
         }

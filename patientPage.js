@@ -1,3 +1,4 @@
+import getStandardDate from './getStandardDate.js';
 import getStandardTime from './getStandardTime.js'
 import hamburgerMenuBtn from './hamburgerMenuBtn.js';
 
@@ -75,7 +76,7 @@ function createAppointment(pIndex){
         const appointmentFields = document.querySelectorAll('#setAppointmentForm input');
         let appt = {date: appointmentFields[0].value , status: 'not confirmed', time:appointmentFields[1].value};
         if(patients[pIndex].appointments){
-        patients[pIndex].appointments.push(appt);
+        patients[pIndex].appointments.unshift(appt);
         }
         else{
             patients[pIndex].appointments = [appt];
@@ -87,9 +88,8 @@ function createAppointment(pIndex){
 
 patients.forEach((patient, pIndex) =>{
     if(patient.name == patientName){
-        let dobDate = new Date(patient.dob);
         infoValues[0].innerHTML = patient.name;
-        infoValues[1].innerHTML = `${dobDate.getMonth()+1}/${dobDate.getDate()}/${dobDate.getFullYear()}`;
+        infoValues[1].innerHTML = getStandardDate(patient.dob);
         infoValues[2].innerHTML = `${patient.height} cm`;
         infoValues[3].innerHTML = `${patient.weight} kg`;
         infoValues[4].innerHTML = patient.sex;
@@ -126,7 +126,7 @@ patients.forEach((patient, pIndex) =>{
             addressIn.type = 'text';
 
             nameIn.value = patient.name;
-            dobIn.value = patient.dob;
+            dobIn.value = getStandardDate(patient.dob);
             heightIn.value = patient.height;
             weightIn.value = patient.weight;
             sexIn.value = patient.sex;
@@ -147,7 +147,7 @@ patients.forEach((patient, pIndex) =>{
             discardBtn.addEventListener('click', () => {location.reload()});
             saveBtn.addEventListener('click', () => {
                 patients[pIndex].name = nameIn.value;
-                patients[pIndex].dob = dobIn.value;
+                patients[pIndex].dob = dateIn.value;
                 patients[pIndex].height = heightIn.value;
                 patients[pIndex].weight = weightIn.value;
                 patients[pIndex].sex = sexIn.value;

@@ -14,7 +14,7 @@ export default function displayReminders(){
 
     addReminderBtn.addEventListener('click', () => {
         let newReminder = document.getElementById('reminderIn').value;
-        reminders.push(newReminder);
+        reminders.unshift(newReminder);
         sessionStorage.setItem("reminders", JSON.stringify(reminders));
         location.reload();
     })
