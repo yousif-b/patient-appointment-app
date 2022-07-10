@@ -9,8 +9,8 @@ export default function displayReminders(){
 
     populateReminders();
     let reminders = JSON.parse(sessionStorage.getItem("reminders"));
-    let reminderBox = document.getElementById('reminderBox');
-    let addReminderBtn = document.getElementById('addReminderBtn');
+    const reminderBox = document.getElementById('reminderBox');
+    const addReminderBtn = document.getElementById('addReminderBtn');
 
     addReminderBtn.addEventListener('click', () => {
         let newReminder = document.getElementById('reminderIn').value;

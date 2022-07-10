@@ -1,7 +1,7 @@
 import getStandardDate from "./getStandardDate.js";
 
 export default function renderPatients(patients){
-    let submitBtn  = document.getElementById('submitBtn');
+    const submitBtn  = document.getElementById('submitBtn');
     submitBtn.addEventListener('click', () => {
         let data = [document.getElementById('nameIn'), document.getElementById('dateIn'), document.getElementById('weightIn'),
         document.getElementById('heightIn'), document.getElementById('sexIn'), document.getElementById('phoneIn'),
@@ -44,7 +44,7 @@ export default function renderPatients(patients){
     function getLatestAppointment(appointments){
         if(appointments.length !== 0){
             let date = new Date(appointments[0].date);
-            return `${date.getMonth()+1}/${date.getDate()}/${date.getFullYear()}`;
+            return `${getStandardDate(date)}`;
         }
         else{
             return 'none made';
@@ -89,7 +89,7 @@ export default function renderPatients(patients){
                             <p> ${p.sex} </p>
                         </div>
                         <div class = 'dataField'>
-                            <label class = 'dataLabel'> Latest Appt </label>
+                            <label class = 'dataLabel'> Latest Appointment Made </label>
                             <p> ${getLatestAppointment(p.appointments)} </p>
                         </div>                       
                     </div>

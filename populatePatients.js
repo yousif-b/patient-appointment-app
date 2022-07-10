@@ -9,7 +9,7 @@ export default function populatePatients(){
             sex: 'male',
             email: 'mfleming@msn.com',
             address: '722 Young Drive Mentor, OH 44060',
-            number: '173-153-8615',
+            number: '1731538615',
             appointments: [{date: '06/03/22', status: 'cancelled', time: '03:28'}, {date: '08/12/22', status: 'not confirmed', time: '14:20'}],
         },
         {
@@ -20,7 +20,7 @@ export default function populatePatients(){
             sex: 'male',
             email: 'zane.schimmel@medhurst.info',
             address: '7092 West Union Drive Desoto, TX 75115',
-            number: '202-918-2132',
+            number: '2029182132',
             appointments: [{date: '03/09/22', status: 'cancelled', time: '04:50'}, {date: '04/09/22', status: 'confirmed', time: '18:28'}],
         },
         {
@@ -31,7 +31,7 @@ export default function populatePatients(){
             sex: 'female',
             email: 'brooklyn65@hotmail.com',
             address: '9892 Cross Ave. Streamwood, IL 60107',
-            number: '582-202-6105',
+            number: '5822026105',
             appointments: [{date: '02/28/22', status: 'confirmed', time: '12:28'}, {date: '03/25/23', status: 'not confirmed', time: '17:14'}],
         },
         {
@@ -42,7 +42,7 @@ export default function populatePatients(){
             sex: 'female',
             email: 'dkuvalis@hotmail.com',
             address: '7442 Gregory Street Winder, GA 30680',
-            number: '309-768-3287',
+            number: '3097683287',
             appointments: [{date: '07/15/22', status: 'cancelled', time: '14:28'}, {date: '12/20/23', status: 'not confirmed', time: '12:20'}],
         },
         {
@@ -53,7 +53,7 @@ export default function populatePatients(){
             sex: 'male',
             email: 'jeramie95@predovic.com',
             address: '193 Carson St. Ontario, CA 91762',
-            number: '582-333-1713',
+            number: '5823331713',
             appointments: [{date: '07/28/22', status: 'not confirmed', time: '10:20'}, {date: '11/13/22', status: 'not confirmed', time: '15:35'}],
         },
         {
@@ -64,7 +64,7 @@ export default function populatePatients(){
             sex: 'male',
             email: 'florida20@bartell.com',
             address: '42 Creek Dr. Brookline, MA 02446',
-            number: '413-816-3787',
+            number: '4138163787',
             appointments: [{date: '03/15/22', status: 'confirmed', time: '17:20'}, {date: '09/17/22', status: 'not confirmed', time: '16:10'}],
         },
         {
@@ -75,7 +75,7 @@ export default function populatePatients(){
             sex: 'female',
             email: 'sonny14@turner.com',
             address: '819 Shore St. Gloucester, MA 01930',
-            number: '582-558-0136',
+            number: '5825580136',
             appointments: [{date: '11/23/22', status: 'not confirmed', time: '09:30'}, {date: '11/14/23', status: 'not confirmed', time: '09:30'}],
         },
         {
@@ -86,7 +86,7 @@ export default function populatePatients(){
             sex: 'male',
             email: 'frath@strosin.com',
             address: '12345 Water Street',
-            number: '423-558-1973',
+            number: '4235581973',
             appointments: [{date: '04/23/22', status: 'confirmed', time: '14:28'}, {date: '08/15/22', status: 'not confirmed', time: '14:28'}],
         }]
     

@@ -1,32 +1,12 @@
 import getStandardTime from "./getStandardTime.js";
 import getStandardDate from "./getStandardDate.js";
+import compareAppointments from "./compareAppointments.js";
 
 export default function getUpcomingAppointments(patients){
-    let upcomingApppointmentsList = document.getElementById('upcomingAppointmentsTable');
+    const upcomingApppointmentsList = document.getElementById('upcomingAppointmentsTable');
     let patientsAppointments = [];
     let totalAppointmentsCount = 0;
     let appointmentsCancelledCount = 0;
-
-    function compareAppointments(a, b){
-        let aDate = new Date(a.date);
-        let bDate = new Date(b.date);
-        if (aDate<bDate){
-            return -1;
-        }
-        if (aDate>bDate){
-            return 1;
-        }
-        if (a.date == b.date){
-            if(a.time<b.time){
-                return -1;
-            }
-            if(b.time>b.time){
-                return 1;
-            }
-        }
-        return 0
-    }
-
 
     patients.forEach(p => {
         if(p.appointments){

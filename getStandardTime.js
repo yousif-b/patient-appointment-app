@@ -1,7 +1,7 @@
 export default function getStandardTime(time){
-    let t = time.split(':');
-    let hours = t[0];
-    let minutes = t[1];
+    const t = time.split(':');
+    const hours = t[0];
+    const minutes = t[1];
     let timeValue;
     if(hours> 0 && hours <= 12){
         timeValue = hours + ":" + minutes + " AM";

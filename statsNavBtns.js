@@ -1,6 +1,6 @@
 export default function statsNavBtns(){
     let stats = [document.getElementsByClassName("stats")[0], document.getElementsByClassName("stats")[1], document.getElementById("welcome")];
-    let statsBtns = document.getElementsByClassName("navigateStats");
+    const statsBtns = document.getElementsByClassName("navigateStats");
     let i = 0;
     stats[i].style.display = "inline-block";
     statsBtns[0].addEventListener("click", () => {

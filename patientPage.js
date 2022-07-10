@@ -4,8 +4,8 @@ import hamburgerMenuBtn from './hamburgerMenuBtn.js';
 
 hamburgerMenuBtn();
 
-let urlParams = new URLSearchParams(window.location.search);
-let patientName = urlParams.get('p');
+const urlParams = new URLSearchParams(window.location.search);
+const patientName = urlParams.get('p');
 let patients = JSON.parse(sessionStorage.getItem("patients"));
 let infoValues = document.getElementsByClassName('infoValue');
 let appointmentsList = document.getElementById('appointments');
