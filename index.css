@@ -164,13 +164,12 @@ nav{
 .patientCard{
     display:flex;
     flex-direction:row;
-    justify-content: space-around;
+    justify-content: space-evenly;
     border-top: 1px solid #b6b6b6;
-
 }
 
 .patientCard svg{
-    max-width:11rem;
+    width:11rem;
 }
 
 .patientCard:hover{
@@ -188,11 +187,23 @@ nav{
 .cardInformationSection{
     display:flex;
     align-items: flex-start;
-    gap:1rem;
-    width:17.5rem;
+    width:40rem;
 }
 
-.cardInformationLabels{
+.cardInformationDetails{
+    display: flex;
+    flex-direction:column;
+    margin:.5rem 0 .5rem 0;
+}
+
+.dataField{
+    display:flex;
+    flex-direction: column;
+    align-items: baseline;
+    width:20rem;
+}
+
+.dataLabel{
     color:#605bff;
 }
 
@@ -671,12 +682,16 @@ aside ul{
         margin:1rem 0 0 0;
     }
     .cardInformationSection{
-        justify-content: center;
+        align-self:center;
+        width:100%;
     }
-    .cardInformationLabels{
-        width:50%;
-    }
+
     .cardInformationDetails{
+        width:100%;
+        align-items: center;
+    }
+
+    .dataField{
         width:50%;
     }
 

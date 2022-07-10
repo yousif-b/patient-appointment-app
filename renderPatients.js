@@ -55,33 +55,42 @@ export default function renderPatients(patients){
         div.className = 'patientCard';
         div.innerHTML = `
                 <div class = "cardInformationSection">
-                    <div class = "cardInformationLabels">
-                        <h3>Name</h3>
-                        <h3>DOB</h3>
-                        <h3>Phone</h3>
-                        <h3>Address</h3>
+                    <div class = 'cardInformationDetails'>
+                        <div class = 'dataField'>
+                            <label class = 'dataLabel'> Name </label>
+                            <p> ${p.name} </p>
+                        </div>
+                        <div class = 'dataField'>
+                            <label class = 'dataLabel'> DOB </label>
+                            <p> ${dobDate.getMonth()+1}/${dobDate.getDate()}/${dobDate.getFullYear()} </p>
+                        </div>
+                        <div class = 'dataField'>
+                            <label class = 'dataLabel'> Phone </label>
+                            <p> ${p.number} </p>
+                        </div>
+                        <div class = 'dataField'>
+                            <label class = 'dataLabel'> Address </label>
+                            <p> ${p.address} </p>
+                        </div>                        
                     </div>
-                    <div class = "cardInformationDetails">
-                        <h3>${p.name}</h3>
-                        <h3>${dobDate.getMonth()+1}/${dobDate.getDate()}/${dobDate.getFullYear()}</h3>
-                        <h3>${p.number}</h3>
-                        <h3>${p.address}</h3>
+                    <div class = 'cardInformationDetails'>
+                        <div class = 'dataField'>
+                            <label class = 'dataLabel'> Height </label>
+                            <p> ${p.height} </p>
+                        </div>
+                        <div class = 'dataField'>
+                            <label class = 'dataLabel'> Weight </label>
+                            <p> ${p.weight} </p>
+                        </div>
+                        <div class = 'dataField'>
+                            <label class = 'dataLabel'> Sex </label>
+                            <p> ${p.sex} </p>
+                        </div>
+                        <div class = 'dataField'>
+                            <label class = 'dataLabel'> Latest Appt </label>
+                            <p> ${getLatestAppointment(p.appointments)} </p>
+                        </div>                       
                     </div>
-                </div>
-                <div class = "cardInformationSection">
-                    <div class = "cardInformationLabels">
-                        <h3>Height</h3>
-                        <h3>Weight</h3>
-                        <h3>Sex</h3>
-                        <h3>Latest Appt</h3>
-                    </div>
-                    <div class = "cardInformationDetails">
-                        <h3>${p.height} cm </h3>
-                        <h3> ${p.weight} kg </h3>
-                        <h3>${p.sex}</h3>
-                        <h3>${getLatestAppointment(p.appointments)}</h3>
-                    </div>
-                </div>
             `;
 
         getEachPatientIcon(p.name, div, p.sex);
